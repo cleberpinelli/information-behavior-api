@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+
+  database-postgres:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: ib-database-postgres
+    ports:
+      - "5434:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=uniriotec
+      - POSTGRES_DB=ibdb
