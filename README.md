@@ -3,7 +3,7 @@ API for information seeking and searching behavior
 
 VISÃO TÉCNICA - BACK END
 
-API Rest usando Java com Spring Boot e banco de dados Oracle , JPA com Hibernate para mapeamento objeto-relacional, validação de dados e tratamento de exceções, ModelMapper para mapeamento de objetos determinando automaticamente como um modelo de objeto mapeia para outro com base em convenções, uso adequado do protocolo HTTP no padrão REST, Swagger para documentar, permitindo que a documentação evolua no mesmo ritmo da implementação, Uso do Query DSL para consultas mais complexas permitindo gerar queries type-safe.
+API Rest usando Java com Spring Boot e banco de dados Postgres, JPA com Hibernate para mapeamento objeto-relacional, validação de dados e tratamento de exceções, ModelMapper para mapeamento de objetos determinando automaticamente como um modelo de objeto mapeia para outro com base em convenções, uso adequado do protocolo HTTP no padrão REST, Swagger para documentar, permitindo que a documentação evolua no mesmo ritmo da implementação, Uso do Query DSL para consultas mais complexas permitindo gerar queries type-safe.
 
 Arquitetura - DDD
 
