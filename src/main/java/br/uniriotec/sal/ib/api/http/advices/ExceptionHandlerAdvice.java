@@ -1,4 +1,4 @@
-package br.uniriotec.sal.ib.api.controller.http.advices;
+package br.uniriotec.sal.ib.api.http.advices;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
