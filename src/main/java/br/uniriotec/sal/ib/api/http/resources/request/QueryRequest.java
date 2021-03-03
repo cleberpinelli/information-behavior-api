@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class QueryRequest {
-
     @ApiModelProperty(value = "Content")
     private String content;
 

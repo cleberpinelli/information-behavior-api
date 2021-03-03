@@ -10,11 +10,19 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class QueryResponse {
+public class ResultResponse {
     @ApiModelProperty(value = "id")
     private Long id;
 
-    @ApiModelProperty(value = "Content")
-    private String content;
+    @ApiModelProperty(value = "query_id")
+    private Long queryId;
 
+    @ApiModelProperty(value = "title")
+    private String title;
+
+    @ApiModelProperty(value = "snippet")
+    private String snippet;
+
+    @ApiModelProperty(value = "link")
+    private String link;
 }

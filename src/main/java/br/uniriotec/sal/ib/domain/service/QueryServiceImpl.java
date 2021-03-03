@@ -24,7 +24,7 @@ public class QueryServiceImpl implements QueryService {
 
     @Override
     public Query findById(Long id) {
-        return repository.findById(id).orElseThrow(() -> new NotFoundException("Exemplo não encontrado."));
+        return repository.findById(id).orElseThrow(() -> new NotFoundException("Query não encontrada."));
     }
 
     @Override

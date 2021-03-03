@@ -15,7 +15,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.annotation.WebFilter;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,23 +31,23 @@ public class QueryController extends BaseController {
         this.modelMapper = modelMapper;
     }
 
-    @ApiOperation(value = "Buscar exemplo por ID", nickname = "getExemploById", notes = "Returns a single Exemplo", response = QueryResponse.class)
+    @ApiOperation(value = "Buscar query por ID", nickname = "getQueryById", notes = "Returns a single Query", response = QueryResponse.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "successful operation", response = QueryResponse.class),
             @ApiResponse(code = 400, message = "Bad Request"),
-            @ApiResponse(code = 404, message = "Exemplo not found")})
+            @ApiResponse(code = 404, message = "Query not found")})
 
     @GetMapping(value = "/{id}")
     @ResponseBody
     public ResponseEntity<?> findById(@PathVariable(name = "id") Long id) {
-        final Query exampleModel = service.findById(id);
-        QueryResponse response = modelMapper.map(exampleModel, QueryResponse.class);
+        final Query model = service.findById(id);
+        QueryResponse response = modelMapper.map(model, QueryResponse.class);
         return respondOk(response);
 
     }
 
 
-    @ApiOperation(value = "Criar novo exemplo", nickname = "addExemplo", notes = "Criar exemplo")
+    @ApiOperation(value = "Criar nova Query", nickname = "addQuery", notes = "Criar Query")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Created"),
             @ApiResponse(code = 400, message = "Bad Request")})
@@ -63,11 +62,11 @@ public class QueryController extends BaseController {
     }
 
 
-    @ApiOperation(value = "Atualizar ExampleModel existente ", nickname = "updateExampleModel", notes = "Atualiza ExampleModel", response = QueryResponse.class)
+    @ApiOperation(value = "Atualizar Query existente ", nickname = "updateQuery", notes = "Atualiza Query", response = QueryResponse.class)
     @ApiResponses(value = {
             @ApiResponse(code = 204, message = "successful operation", response = QueryResponse.class),
             @ApiResponse(code = 400, message = "Bad Request"),
-            @ApiResponse(code = 404, message = "ExampleModel not found")})
+            @ApiResponse(code = 404, message = "QueryModel not found")})
 
     @PutMapping(value = "/{id}")
     @ResponseBody
@@ -78,11 +77,11 @@ public class QueryController extends BaseController {
     }
 
 
-    @ApiOperation(value = "Deletar ExampleModel existente ", nickname = "deleteExampleModel", notes = "deleta ExampleModel", response = QueryResponse.class)
+    @ApiOperation(value = "Deletar Query existente ", nickname = "deleteQuery", notes = "deleta Query", response = QueryResponse.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "successful operation", response = QueryResponse.class),
             @ApiResponse(code = 400, message = "Bad Request"),
-            @ApiResponse(code = 404, message = "ExampleModel not found")})
+            @ApiResponse(code = 404, message = "QueryeModel not found")})
 
     @DeleteMapping(value = "/{id}")
     @ResponseBody
@@ -91,7 +90,7 @@ public class QueryController extends BaseController {
     }
 
 
-    @ApiOperation(value = "Buscar ExampleModels", nickname = "findAll", notes = "Multiple search parasm can be provided", response = Query.class, responseContainer = "List")
+    @ApiOperation(value = "Buscar Query", nickname = "findAll", notes = "Multiple search params can be provided", response = Query.class, responseContainer = "List")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "successful operation", response = Query.class, responseContainer = "List"),
             @ApiResponse(code = 400, message = "Bad Request")})
@@ -99,11 +98,11 @@ public class QueryController extends BaseController {
     @GetMapping
     @ResponseBody
     public ResponseEntity<?> findAll(Pageable pageable) {
-        Page<Query> exampleModelPage = service.findAll(pageable);
-        List<QueryResponse> content = exampleModelPage.stream()
+        Page<Query> modelPage = service.findAll(pageable);
+        List<QueryResponse> content = modelPage.stream()
                 .map(item -> modelMapper.map(item, QueryResponse.class))
                 .collect(Collectors.toList());
-        Page<QueryResponse> exampleModelResponses = new PageImpl<>(content, pageable, exampleModelPage.getTotalElements());
-        return respondOk(exampleModelResponses);
+        Page<QueryResponse> modelResponses = new PageImpl<>(content, pageable, modelPage.getTotalElements());
+        return respondOk(modelResponses);
     }
 }
