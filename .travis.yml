@@ -1,1 +1,5 @@
   language: java
+  java:
+  - "8"
+install:
+  - "mvn install"
