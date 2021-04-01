@@ -1,5 +1,5 @@
   dist: xenial
   language: java
   jdk: openjdk8
-  install: "mvn install"
+  install: "mvn install -DskipTests"
   after_success: bash <(curl -s https://codecov.io/bash)
