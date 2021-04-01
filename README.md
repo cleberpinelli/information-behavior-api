@@ -1,7 +1,7 @@
 # information-behavior-api
 API for information seeking and searching behavior
 
-![Travis build](https://api.travis-ci.com/cleberpinelli/information-behavior-api.svg?branch=master)
+![Travis build](https://api.travis-ci.com/cleberpinelli/information-behavior-api.svg?branch=main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/cleberpinelli/information-behavior-api)](https://github.com/cleberpinelli/information-behavior-api/commits/main)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
